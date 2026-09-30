@@ -1,265 +1,280 @@
 /**
- * PORTFOLIO JAVASCRIPT - CHANDRA ARYA FERDIYANSAH
- * Interactive UI/UX: Filters, Modals, Smooth Navigation, Form Actions & Toast
+ * DESIGN LAB JAVASCRIPT — CHANDRA ARYA FERDIYANSAH
+ * Features: Preloader Counter, 3D Tilt Access Pass, Text Decrypt Scramble, WIB Live Clock, Modal & Toast
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initNavbar();
-  initExperienceFilter();
-  initStatsCounter();
+  initPreloader();
+  initTextScramble();
+  initTiltPass();
+  initLiveClock();
+  initNav();
   initModal();
-  initContactForm();
-  initCopyActions();
+  initActions();
 });
 
 /* --------------------------------------------------------------------------
-   1. NAVBAR & MOBILE MENU
+   1. SYSTEM PRELOADER COUNTER
    -------------------------------------------------------------------------- */
-function initNavbar() {
-  const navbar = document.querySelector('.navbar');
-  const mobileToggle = document.querySelector('.mobile-toggle');
-  const navMenu = document.querySelector('.nav-menu');
-  const navLinks = document.querySelectorAll('.nav-link');
+function initPreloader() {
+  const loader = document.getElementById('preloader');
+  const countEl = document.getElementById('loader-count');
+  const progressEl = document.getElementById('loader-progress');
 
-  // Scroll effect
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navbar.classList.add('scrolled');
+  if (!loader || !countEl || !progressEl) return;
+
+  let current = 0;
+  const target = 100;
+  const duration = 1200; // ms
+  const interval = 20;
+  const increment = target / (duration / interval);
+
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      current = target;
+      clearInterval(timer);
+      countEl.textContent = '100%';
+      progressEl.style.width = '100%';
+      
+      setTimeout(() => {
+        loader.classList.add('is-done');
+        triggerInitialScramble();
+      }, 300);
     } else {
-      navbar.classList.remove('scrolled');
+      const display = Math.floor(current).toString().padStart(3, '0');
+      countEl.textContent = `${display}%`;
+      progressEl.style.width = `${current}%`;
     }
-    updateActiveNavLink();
+  }, interval);
+}
+
+/* --------------------------------------------------------------------------
+   2. TEXT DECRYPTION SCRAMBLE EFFECT
+   -------------------------------------------------------------------------- */
+const glyphs = 'ABCDEF0123456789//<>[]!@#$%^&*()_+-=~';
+
+function scrambleText(element, finalText, speed = 30) {
+  let iteration = 0;
+  const original = finalText || element.innerText;
+  
+  const interval = setInterval(() => {
+    element.innerText = original
+      .split('')
+      .map((letter, index) => {
+        if (index < iteration) return original[index];
+        return glyphs[Math.floor(Math.random() * glyphs.length)];
+      })
+      .join('');
+
+    if (iteration >= original.length) {
+      clearInterval(interval);
+      element.innerText = original;
+    }
+
+    iteration += 1 / 2;
+  }, speed);
+}
+
+function initTextScramble() {
+  const decryptElements = document.querySelectorAll('[data-decrypt]');
+  decryptElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      scrambleText(el, el.getAttribute('data-decrypt') || el.innerText);
+    });
+  });
+}
+
+function triggerInitialScramble() {
+  const heroDecrypt = document.querySelector('.hero__decrypt');
+  if (heroDecrypt) {
+    scrambleText(heroDecrypt, heroDecrypt.innerText);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. 3D INTERACTIVE TILT PASS
+   -------------------------------------------------------------------------- */
+function initTiltPass() {
+  const pass = document.getElementById('access-pass');
+  if (!pass) return;
+
+  pass.addEventListener('mousemove', (e) => {
+    const rect = pass.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    const rotateX = ((y - centerY) / centerY) * -12;
+    const rotateY = ((x - centerX) / centerX) * 12;
+    
+    pass.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    pass.style.boxShadow = `${-rotateY * 2}px ${rotateX * 2}px 40px rgba(255, 0, 168, 0.25)`;
   });
 
-  // Mobile menu toggle
-  if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-      const isExpanded = navMenu.classList.contains('open');
-      mobileToggle.setAttribute('aria-expanded', isExpanded);
+  pass.addEventListener('mouseleave', () => {
+    pass.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    pass.style.boxShadow = '0 30px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 0, 168, 0.1)';
+  });
+}
+
+/* --------------------------------------------------------------------------
+   4. LIVE JAKARTA WIB (UTC+7) CLOCK
+   -------------------------------------------------------------------------- */
+function initLiveClock() {
+  const clockEl = document.getElementById('wib-clock');
+  if (!clockEl) return;
+
+  function updateClock() {
+    const now = new Date();
+    // Jakarta is UTC+7
+    const options = {
+      timeZone: 'Asia/Jakarta',
+      hour12: false,
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    };
+    const timeStr = now.toLocaleTimeString('id-ID', options);
+    clockEl.textContent = `JKT // ${timeStr} WIB`;
+  }
+
+  updateClock();
+  setInterval(updateClock, 1000);
+}
+
+/* --------------------------------------------------------------------------
+   5. NAVIGATION
+   -------------------------------------------------------------------------- */
+function initNav() {
+  const toggle = document.querySelector('.nav__toggle');
+  const linksWrap = document.querySelector('.nav__links');
+  const navLinks = document.querySelectorAll('.nav__link');
+
+  if (toggle && linksWrap) {
+    toggle.addEventListener('click', () => {
+      linksWrap.classList.toggle('open');
     });
 
-    // Close menu when clicking link
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
+        linksWrap.classList.remove('open');
       });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!navbar.contains(e.target) && navMenu.classList.contains('open')) {
-        navMenu.classList.remove('open');
-      }
     });
   }
 
-  // Active section indicator
-  function updateActiveNavLink() {
+  // Active section spy
+  window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section[id]');
-    const scrollPosition = window.scrollY + 120;
+    const scrollPos = window.scrollY + 140;
 
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute('id');
+    sections.forEach(sec => {
+      const top = sec.offsetTop;
+      const height = sec.offsetHeight;
+      const id = sec.getAttribute('id');
 
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${sectionId}`) {
-            link.classList.add('active');
+      if (scrollPos >= top && scrollPos < top + height) {
+        navLinks.forEach(lnk => {
+          lnk.classList.remove('active');
+          if (lnk.getAttribute('href') === `#${id}`) {
+            lnk.classList.add('active');
           }
         });
       }
     });
-  }
-}
-
-/* --------------------------------------------------------------------------
-   2. EXPERIENCE FILTER TABS
-   -------------------------------------------------------------------------- */
-function initExperienceFilter() {
-  const tabButtons = document.querySelectorAll('.tab-btn');
-  const cards = document.querySelectorAll('.experience-card');
-
-  if (!tabButtons.length || !cards.length) return;
-
-  tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Toggle active class
-      tabButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-
-      const filter = button.getAttribute('data-filter');
-
-      cards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        if (filter === 'all' || category.includes(filter)) {
-          card.style.display = 'flex';
-          card.style.animation = 'fadeInUp 0.4s ease forwards';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
   });
 }
 
 /* --------------------------------------------------------------------------
-   3. ANIMATED STATS COUNTERS
-   -------------------------------------------------------------------------- */
-function initStatsCounter() {
-  const statNumbers = document.querySelectorAll('.stat-number');
-  let hasAnimated = false;
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !hasAnimated) {
-        hasAnimated = true;
-        statNumbers.forEach(stat => {
-          const target = parseFloat(stat.getAttribute('data-target'));
-          const isDecimal = stat.getAttribute('data-decimal') === 'true';
-          const suffix = stat.getAttribute('data-suffix') || '';
-          animateValue(stat, 0, target, 1500, isDecimal, suffix);
-        });
-      }
-    });
-  }, { threshold: 0.4 });
-
-  const statsSection = document.querySelector('.stats-section');
-  if (statsSection) {
-    observer.observe(statsSection);
-  }
-
-  function animateValue(elem, start, end, duration, isDecimal, suffix) {
-    let startTimestamp = null;
-    const step = (timestamp) => {
-      if (!startTimestamp) startTimestamp = timestamp;
-      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      const current = progress * (end - start) + start;
-      
-      if (isDecimal) {
-        elem.innerHTML = current.toFixed(2) + `<span class="accent">${suffix}</span>`;
-      } else {
-        elem.innerHTML = Math.floor(current) + `<span class="accent">${suffix}</span>`;
-      }
-
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      } else {
-        if (isDecimal) {
-          elem.innerHTML = end.toFixed(2) + `<span class="accent">${suffix}</span>`;
-        } else {
-          elem.innerHTML = end + `<span class="accent">${suffix}</span>`;
-        }
-      }
-    };
-    window.requestAnimationFrame(step);
-  }
-}
-
-/* --------------------------------------------------------------------------
-   4. MODAL PREVIEW (CV & DOKUMEN)
+   6. MODAL PREVIEW (CV DOKUMEN)
    -------------------------------------------------------------------------- */
 function initModal() {
-  const openModalBtns = document.querySelectorAll('[data-open-modal="cv-modal"]');
-  const closeModalBtns = document.querySelectorAll('[data-close-modal]');
-  const modalBackdrop = document.getElementById('cv-modal');
+  const openBtns = document.querySelectorAll('[data-open-modal="cv-modal"]');
+  const closeBtns = document.querySelectorAll('[data-close-modal]');
+  const modal = document.getElementById('cv-modal');
 
-  if (!modalBackdrop) return;
+  if (!modal) return;
 
-  openModalBtns.forEach(btn => {
+  openBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      modalBackdrop.classList.add('open');
+      modal.classList.add('open');
       document.body.style.overflow = 'hidden';
     });
   });
 
-  closeModalBtns.forEach(btn => {
+  closeBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      closeModal();
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
     });
   });
 
-  modalBackdrop.addEventListener('click', (e) => {
-    if (e.target === modalBackdrop) {
-      closeModal();
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
     }
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalBackdrop.classList.contains('open')) {
-      closeModal();
+    if (e.key === 'Escape' && modal.classList.contains('open')) {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
     }
-  });
-
-  function closeModal() {
-    modalBackdrop.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-}
-
-/* --------------------------------------------------------------------------
-   5. CONTACT FORM & WHATSAPP GENERATOR
-   -------------------------------------------------------------------------- */
-function initContactForm() {
-  const form = document.getElementById('contact-form');
-  if (!form) return;
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const name = document.getElementById('form-name').value.trim();
-    const email = document.getElementById('form-email').value.trim();
-    const subject = document.getElementById('form-subject').value.trim();
-    const message = document.getElementById('form-message').value.trim();
-
-    if (!name || !email || !message) {
-      showToast('⚠️ Harap lengkapi semua kolom formulir.');
-      return;
-    }
-
-    // Format WhatsApp message
-    const waPhone = '6285211718008';
-    const waText = encodeURIComponent(
-      `Halo Chandra Arya,\n\nSaya ${name} (${email}).\nPerihal: ${subject || 'Peluang Karir/Kerjasama'}\n\nPesan:\n${message}`
-    );
-    const waUrl = `https://wa.me/${waPhone}?text=${waText}`;
-
-    showToast('✨ Pesan disiapkan! Membuka WhatsApp untuk terhubung...', 3000);
-
-    setTimeout(() => {
-      window.open(waUrl, '_blank');
-      form.reset();
-    }, 800);
   });
 }
 
 /* --------------------------------------------------------------------------
-   6. COPY TO CLIPBOARD ACTIONS
+   7. ACTIONS: COPY & WHATSAPP GENERATOR
    -------------------------------------------------------------------------- */
-function initCopyActions() {
-  const copyButtons = document.querySelectorAll('[data-copy]');
-
-  copyButtons.forEach(btn => {
+function initActions() {
+  // Copy to clipboard
+  const copyBtns = document.querySelectorAll('[data-copy]');
+  copyBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const textToCopy = btn.getAttribute('data-copy');
-      navigator.clipboard.writeText(textToCopy).then(() => {
-        showToast(`📋 Berhasil disalin: ${textToCopy}`);
+      const val = btn.getAttribute('data-copy');
+      navigator.clipboard.writeText(val).then(() => {
+        showToast(`[TRANSMISSION] Copied: ${val}`);
       }).catch(() => {
-        showToast('Gagal menyalin teks.');
+        showToast('[ERROR] Failed to copy');
       });
     });
   });
+
+  // Contact form to WhatsApp
+  const form = document.getElementById('transmission-form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('t-name').value.trim();
+      const org = document.getElementById('t-org').value.trim();
+      const message = document.getElementById('t-message').value.trim();
+
+      if (!name || !message) {
+        showToast('[VALIDATION] Required fields missing');
+        return;
+      }
+
+      const waPhone = '6285211718008';
+      const text = encodeURIComponent(
+        `Halo Chandra Arya,\nSaya ${name} (${org || 'Pemberi Kerja'}).\n\nPesan:\n${message}`
+      );
+      showToast('[SYS] Initializing WhatsApp transmission...', 2500);
+
+      setTimeout(() => {
+        window.open(`https://wa.me/${waPhone}?text=${text}`, '_blank');
+        form.reset();
+      }, 700);
+    });
+  }
 }
 
-/* --------------------------------------------------------------------------
-   7. TOAST NOTIFICATION UTILITY
-   -------------------------------------------------------------------------- */
-function showToast(message, duration = 3500) {
+/* Toast */
+function showToast(msg, duration = 3000) {
   let container = document.querySelector('.toast-container');
   if (!container) {
     container = document.createElement('div');
@@ -269,22 +284,13 @@ function showToast(message, duration = 3500) {
 
   const toast = document.createElement('div');
   toast.className = 'toast';
-  toast.innerHTML = `
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="10"></circle>
-      <line x1="12" y1="8" x2="12" y2="12"></line>
-      <line x1="12" y1="16" x2="12.01" y2="16"></line>
-    </svg>
-    <span>${message}</span>
-  `;
-
+  toast.innerHTML = `<span style="color: var(--accent);">></span> ${msg}`;
   container.appendChild(toast);
 
   setTimeout(() => {
     toast.style.opacity = '0';
     toast.style.transform = 'translateX(100%)';
-    toast.style.transition = 'all 0.4s ease';
-    setTimeout(() => toast.remove(), 400);
+    toast.style.transition = 'all 0.3s ease';
+    setTimeout(() => toast.remove(), 300);
   }, duration);
 }
-

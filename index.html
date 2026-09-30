@@ -3,745 +3,585 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chandra Arya Ferdiyansah — Portofolio Profesional & Manajemen Bisnis</title>
-  <meta name="description" content="Portofolio resmi Chandra Arya Ferdiyansah. Spesialis Manajemen Perkantoran, Layanan Bisnis, Kasir & Administrasi Operasional." />
+  <title>Chandra Arya Ferdiyansah — Design Lab &amp; Professional Portfolio</title>
+  <meta name="description" content="Chandra Arya Ferdiyansah — Spesialis Manajemen Perkantoran, Layanan Bisnis, Kasir &amp; Administrasi Operasional." />
   
-  <!-- Google Fonts: Playfair Display (Serif) & Plus Jakarta Sans -->
+  <!-- Fonts: Space Grotesk (display), Space Mono (utilitarian), Caveat (sketch) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
 
-  <!-- Custom Stylesheet -->
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
-  <!-- Ambient Glowing Bacgkrounds -->
-  <div class="ambient-glow-top"></div>
-  <div class="ambient-glow-mid"></div>
-  <div class="ambient-glow-bottom"></div>
-
   <!-- =========================================================================
-       NAVIGATION BAR
+       PRELOADER SCREEN (.loader)
        ========================================================================= -->
-  <header class="navbar">
-    <div class="container nav-container">
-      <a href="#hero" class="brand-logo">
-        <div class="logo-badge">C</div>
-        <div class="brand-text">
-          <span class="brand-name">Chandra Arya F.</span>
-          <span class="brand-sub">Office & Business Ops</span>
-        </div>
-      </a>
-
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="#hero" class="nav-link active">Beranda</a></li>
-          <li><a href="#about" class="nav-link">Tentang</a></li>
-          <li><a href="#experience" class="nav-link">Pengalaman</a></li>
-          <li><a href="#education" class="nav-link">Pendidikan</a></li>
-          <li><a href="#skills" class="nav-link">Keahlian</a></li>
-          <li><a href="#contact" class="nav-link">Kontak</a></li>
-        </ul>
-      </nav>
-
-      <div class="nav-actions">
-        <a href="#contact" class="btn btn-primary btn-sm">
-          <span>Hubungi Saya</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-        </a>
-        <button class="mobile-toggle" aria-label="Buka Menu Navigasi">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-        </button>
-      </div>
+  <div id="preloader" class="loader">
+    <div class="loader__head">
+      <span class="loader__brand">CHANDRA ARYA // PORTFOLIO LAB</span>
+      <span class="mono-label">[SYS // V2.6]</span>
     </div>
-  </header>
 
-  <!-- =========================================================================
-       HERO SECTION
-       ========================================================================= -->
-  <section id="hero" class="hero-section">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-content">
-          <div class="status-pill">
-            <span class="status-dot"></span>
-            <span>Siap Membawa Energi Positif ke Dunia Profesional</span>
-          </div>
-
-          <div class="hero-header-group">
-            <span class="hero-tagline font-serif italic-serif">The Professional Portfolio</span>
-            <h1 class="hero-title">
-              Chandra Arya <br />
-              <span class="role font-serif italic-serif">Ferdiyansah</span>
-            </h1>
-          </div>
-
-          <p class="hero-description">
-            Lulusan <strong>Manajemen Perkantoran dan Layanan Bisnis</strong> berintegritas tinggi dengan rekam jejak praktis di bidang administrasi persuratan, pelayanan publik, operasional kasir, rekonsiliasi omset, serta pengelolaan inventaris yang teliti dan terorganisir.
-          </p>
-
-          <div class="hero-cta">
-            <a href="https://wa.me/6285211718008?text=Halo%20Chandra%2C%20saya%20tertarik%20melihat%20portofolio%20Anda%20dan%20ingin%20berdiskusi%20mengenai%20peluang%20karir." target="_blank" class="btn btn-primary">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <span>Hubungi via WhatsApp</span>
-            </a>
-
-            <button class="btn btn-secondary" data-open-modal="cv-modal">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-              <span>Pratinjau Dokumen CV</span>
-            </button>
-          </div>
-
-          <div class="hero-socials">
-            <a href="mailto:chandraarya342@gmail.com" class="social-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              <span>chandraarya342@gmail.com</span>
-            </a>
-            <span class="social-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              <span>Tangerang Selatan, Banten</span>
-            </span>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="avatar-frame">
-            <div class="avatar-glow"></div>
-            
-            <!-- Top-Left Floating Badge -->
-            <div class="floating-badge badge-top-left">
-              <div class="badge-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-              </div>
-              <div class="badge-text">
-                <span>Nilai Akhir Rata-Rata</span>
-                <strong>88.02 / 100</strong>
-              </div>
-            </div>
-
-            <!-- Bottom-Right Floating Badge -->
-            <div class="floating-badge badge-bottom-right">
-              <div class="badge-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-              </div>
-              <div class="badge-text">
-                <span>Spesialisasi</span>
-                <strong>Manajemen Bisnis</strong>
-              </div>
-            </div>
-
-            <div class="avatar-card">
-              <div class="avatar-img-wrap">
-                <img src="assets/images/chandra-profile.jpg" alt="Foto Chandra Arya Ferdiyansah" />
-                <div class="avatar-overlay-gradient"></div>
-                <div class="avatar-caption">
-                  <h3>Chandra Arya Ferdiyansah</h3>
-                  <p>Lulusan SMK Muhammadiyah 01 Ciputat (2022–2025)</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       STATS BAR SECTION
-       ========================================================================= -->
-  <section class="stats-section">
-    <div class="container">
-      <div class="stats-bar">
-        <div class="stat-item">
-          <div class="stat-number" data-target="88.02" data-decimal="true" data-suffix="">88.02</div>
-          <div class="stat-label">Nilai Rata-Rata Kelulusan</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number" data-target="4" data-decimal="false" data-suffix="+">4+</div>
-          <div class="stat-label">Pengalaman Kerja & Magang</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number" data-target="100" data-decimal="false" data-suffix="%">100%</div>
-          <div class="stat-label">Komitmen & Ketelitian</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number" data-target="2025" data-decimal="false" data-suffix="">2025</div>
-          <div class="stat-label">Lulusan Kompeten & Siap Kerja</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       ABOUT SECTION
-       ========================================================================= -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-subtitle">Mengenal Lebih Dekat</span>
-        <h2 class="section-title">Profil & <span class="italic-serif">Dedikasi Profesional</span></h2>
-        <p class="section-desc">Kombinasi disiplin administratif yang terstruktur dengan etos kerja berenergi positif.</p>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-card-story">
-          <p class="about-story-text">
-            Perkenalkan, saya <strong>Chandra Arya Ferdiyansah</strong>, lahir di Jakarta pada 14 November 2006. Dengan latar belakang pendidikan dalam <em>Manajemen Perkantoran dan Layanan Bisnis</em> serta pengalaman kerja langsung di sektor pelayanan instansi pemerintah dan operasional retail/F&amp;B, saya siap membawa energi positif ke dalam dunia profesional.
-          </p>
-          <p class="about-story-text">
-            Saya memiliki pemahaman kokoh mengenai tata kelola perkantoran modern, pengarsipan berkas, pendataan inventaris, serta pelayanan prima terhadap warga dan pelanggan. Tujuan karir saya adalah dapat berkontribusi nyata dalam memajukan dan mensejahterakan perusahaan tempat saya bertumbuh.
-          </p>
-
-          <ul class="about-info-list">
-            <li class="info-item">
-              <span class="info-label">Tempat, Tanggal Lahir</span>
-              <span class="info-value">Jakarta, 14 November 2006</span>
-            </li>
-            <li class="info-item">
-              <span class="info-label">Domisili</span>
-              <span class="info-value">Tangerang Selatan, Banten</span>
-            </li>
-            <li class="info-item">
-              <span class="info-label">Pendidikan Terakhir</span>
-              <span class="info-value">SMK (Manajemen Perkantoran)</span>
-            </li>
-            <li class="info-item">
-              <span class="info-label">Status Ketersediaan</span>
-              <span class="info-value" style="color: #4ade80;">Aktif &amp; Siap Bekerja</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="about-values-grid">
-          <div class="value-card">
-            <div class="value-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-            </div>
-            <h4 class="value-title">Komunikasi Efektif</h4>
-            <p class="value-desc">Terlatih melayani warga secara ramah dan profesional serta berkoordinasi lancar bersama tim kerja.</p>
-          </div>
-
-          <div class="value-card">
-            <div class="value-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            </div>
-            <h4 class="value-title">Manajemen Waktu</h4>
-            <p class="value-desc">Mampu memprioritaskan pekerjaan administratif, mengejar target outlet harian, dan disiplin tinggi.</p>
-          </div>
-
-          <div class="value-card">
-            <div class="value-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-            </div>
-            <h4 class="value-title">Integritas &amp; Kejujuran</h4>
-            <p class="value-desc">Dapat dipercaya dalam pengelolaan kas kecil (petty cash), rekapitulasi omset, serta akurasi stock opname.</p>
-          </div>
-
-          <div class="value-card">
-            <div class="value-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
-            </div>
-            <h4 class="value-title">Perhatian Detail</h4>
-            <p class="value-desc">Cermat dalam memeriksa kelengkapan surat resmi, nomor registrasi, dan verifikasi arsip penting.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       EXPERIENCE SECTION
-       ========================================================================= -->
-  <section id="experience" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-subtitle">Rekam Jejak Karir</span>
-        <h2 class="section-title">Pengalaman Kerja &amp; <span class="italic-serif">Magang Nyata</span></h2>
-        <p class="section-desc">Pengalaman langsung di bidang operasional, tata kelola kearsipan, dan pelayanan masyarakat.</p>
-      </div>
-
-      <!-- Category Filter Tabs -->
-      <div class="experience-tabs">
-        <button class="tab-btn active" data-filter="all">Semua Pengalaman (4)</button>
-        <button class="tab-btn" data-filter="retail">F&amp;B &amp; Retail Operations</button>
-        <button class="tab-btn" data-filter="admin">Administrasi &amp; Pelayanan Publik</button>
-      </div>
-
-      <!-- Experience Cards Grid -->
-      <div class="experience-grid">
-        
-        <!-- Experience 1: Burger Bangor -->
-        <div class="experience-card" data-category="retail">
-          <div class="experience-header">
-            <div class="experience-company">
-              <div class="company-badge-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
-              </div>
-              <div>
-                <h3 class="experience-role">Crew Outlet &amp; Kasir</h3>
-                <div class="experience-place">Burger Bangor</div>
-              </div>
-            </div>
-            <span class="experience-date">25 Jul – 01 Des 2025</span>
-          </div>
-
-          <div class="experience-type-pill">Full Time Experience</div>
-
-          <ul class="experience-tasks">
-            <li>Menjalankan sistem kerja yang fleksibel dengan tanggung jawab ganda dalam memasak pesanan dan bertugas sebagai kasir utama.</li>
-            <li>Melakukan pencatatan dan penghitungan hasil penjualan harian, stock opname bahan baku, dan penghitungan petty cash secara teliti.</li>
-            <li>Merekap omset harian dan bulanan guna menjaga akurasi laporan keuangan outlet.</li>
-            <li>Konsisten mengejar target penjualan outlet bersama tim serta memastikan kebersihan area dapur dan dining sesuai standar.</li>
-          </ul>
-
-          <div class="experience-tags">
-            <span class="skill-tag">Kasir POS</span>
-            <span class="skill-tag">Stock Opname</span>
-            <span class="skill-tag">Petty Cash</span>
-            <span class="skill-tag">Rekap Omset</span>
-            <span class="skill-tag">Target Sales</span>
-          </div>
-        </div>
-
-        <!-- Experience 2: Teh Poci -->
-        <div class="experience-card" data-category="retail">
-          <div class="experience-header">
-            <div class="experience-company">
-              <div class="company-badge-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
-              </div>
-              <div>
-                <h3 class="experience-role">Crew Outlet</h3>
-                <div class="experience-place">Teh Poci</div>
-              </div>
-            </div>
-            <span class="experience-date">01 Feb – 01 Jun 2024</span>
-          </div>
-
-          <div class="experience-type-pill">Part Time Experience</div>
-
-          <ul class="experience-tasks">
-            <li>Membuat racikan minuman teh berkualitas sesuai formula dan takaran standar yang ditetapkan perusahaan.</li>
-            <li>Mendata seluruh hasil transaksi penjualan harian dan menghitung stok barang keluar-masuk di outlet secara berkala.</li>
-            <li>Fokus mengejar target penjualan harian melalui pelayanan ramah dan cepat kepada pelanggan.</li>
-            <li>Memelihara higienitas perlengkapan dan sanitasi area kerja guna kenyamanan pelanggan.</li>
-          </ul>
-
-          <div class="experience-tags">
-            <span class="skill-tag">Customer Service</span>
-            <span class="skill-tag">Inventaris Stok</span>
-            <span class="skill-tag">Pencatatan Penjualan</span>
-            <span class="skill-tag">Higienitas F&amp;B</span>
-          </div>
-        </div>
-
-        <!-- Experience 3: Kesejahteraan Sosial Kelurahan Ciputat -->
-        <div class="experience-card" data-category="admin">
-          <div class="experience-header">
-            <div class="experience-company">
-              <div class="company-badge-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-              </div>
-              <div>
-                <h3 class="experience-role">Pelayanan Kesejahteraan Sosial</h3>
-                <div class="experience-place">Kelurahan Ciputat</div>
-              </div>
-            </div>
-            <span class="experience-date">02 Okt – 29 Des 2023</span>
-          </div>
-
-          <div class="experience-type-pill">Pelayanan Publik Instansi</div>
-
-          <ul class="experience-tasks">
-            <li>Bertanggung jawab di bagian pelayanan langsung (front office) untuk melayani kebutuhan warga masyarakat secara santun dan ramah.</li>
-            <li>Memproses dan menerbitkan dokumen surat keterangan seperti Surat Keterangan Tidak Mampu (SKTM), surat pengantar nikah, serta surat pernyataan resmi.</li>
-            <li>Melakukan pendataan berkala dan inventarisasi pada Kartu Inventaris Ruangan (KIR) demi kerapian aset kantor kelurahan.</li>
-          </ul>
-
-          <div class="experience-tags">
-            <span class="skill-tag">Pelayanan Warga</span>
-            <span class="skill-tag">Pembuatan SKTM</span>
-            <span class="skill-tag">Kartu Inventaris (KIR)</span>
-            <span class="skill-tag">Komunikasi Publik</span>
-          </div>
-        </div>
-
-        <!-- Experience 4: Magang Administrasi Kelurahan Ciputat -->
-        <div class="experience-card" data-category="admin">
-          <div class="experience-header">
-            <div class="experience-company">
-              <div class="company-badge-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-              </div>
-              <div>
-                <h3 class="experience-role">Magang Administrasi &amp; Kearsipan</h3>
-                <div class="experience-place">Kelurahan Ciputat</div>
-              </div>
-            </div>
-            <span class="experience-date">02 Okt – 29 Des 2023</span>
-          </div>
-
-          <div class="experience-type-pill">Program PKL / Magang</div>
-
-          <ul class="experience-tasks">
-            <li>Membantu proses penyusunan, pengetikan, dan pengecekan format surat-menyurat kedinasan.</li>
-            <li>Menyusun dan mengklasifikasikan surat masuk serta surat keluar ke dalam map arsip sesuai nomor klasifikasi kearsipan.</li>
-            <li>Memverifikasi berkas yang wajib diarsipkan serta meregistrasikan surat ke dalam buku register dan sistem data kelurahan.</li>
-          </ul>
-
-          <div class="experience-tags">
-            <span class="skill-tag">Tata Kelola Surat</span>
-            <span class="skill-tag">Pengarsipan Dokumen</span>
-            <span class="skill-tag">Registrasi Surat</span>
-            <span class="skill-tag">Data Entry</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       EDUCATION & SKILLS SECTION
-       ========================================================================= -->
-  <section id="education" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-subtitle">Kompetensi &amp; Keahlian</span>
-        <h2 class="section-title">Pendidikan &amp; <span class="italic-serif">Matriks Kemampuan</span></h2>
-        <p class="section-desc">Fondasi keilmuan manajemen perkantoran didukung keahlian teknis dan kepribadian adaptif.</p>
-      </div>
-
-      <div class="edu-skills-grid">
-        
-        <!-- Left: Education -->
-        <div class="education-card">
-          <div class="edu-badge-score">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            <span>Nilai Rata-Rata Akhir: 88,02</span>
-          </div>
-
-          <h3 class="edu-school">SMK Muhammadiyah 01 Ciputat</h3>
-          <h4 class="edu-major">Manajemen Perkantoran &amp; Layanan Bisnis</h4>
-          <span style="font-size: 0.85rem; color: #94a3b8; display: block; margin-bottom: 16px;">Tangerang Selatan, Banten (Periode 2022 – 2025)</span>
-
-          <p class="edu-desc">
-            Menempuh pendidikan kejuruan intensif dengan fokus keahlian pada otomatisasi tata kelola perkantoran, sistem layanan bisnis terintegrasi, korespondensi resmi, etika komunikasi profesional, serta manajemen kearsipan dan basis data.
-          </p>
-
-          <div class="edu-highlights">
-            <div class="edu-hl-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Penguasaan aplikasi perkantoran modern untuk efisiensi dokumen kerja</span>
-            </div>
-            <div class="edu-hl-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Etika layanan konsumen dan komunikasi bisnis formal maupun informal</span>
-            </div>
-            <div class="edu-hl-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Tata kelola keuangan operasional sederhana, kasir &amp; kas kecil</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Skills Matrix -->
-        <div id="skills" class="skills-column">
-          
-          <!-- Technical Skills -->
-          <div class="skills-box">
-            <h3 class="skills-box-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-              <span>Kemampuan Teknis (Hard Skills)</span>
-            </h3>
-
-            <div class="hard-skills-list">
-              <div class="hard-skill-item">
-                <div class="hard-skill-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                </div>
-                <div class="hard-skill-content">
-                  <h4 class="hard-skill-title">Mengelola Microsoft Word</h4>
-                  <p class="hard-skill-desc">Penyusunan surat resmi, pengetikan format laporan kerja &amp; tata kelola korespondensi</p>
-                </div>
-              </div>
-
-              <div class="hard-skill-item">
-                <div class="hard-skill-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line></svg>
-                </div>
-                <div class="hard-skill-content">
-                  <h4 class="hard-skill-title">Mengelola Microsoft Excel</h4>
-                  <p class="hard-skill-desc">Input data transaksi, pengoperasian formula kalkulasi &amp; rekapitulasi omset harian/bulanan</p>
-                </div>
-              </div>
-
-              <div class="hard-skill-item">
-                <div class="hard-skill-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                </div>
-                <div class="hard-skill-content">
-                  <h4 class="hard-skill-title">Mengelola Microsoft PowerPoint</h4>
-                  <p class="hard-skill-desc">Perancangan slide presentasi bisnis, infografis informatif &amp; visualisasi data materi</p>
-                </div>
-              </div>
-
-              <div class="hard-skill-item">
-                <div class="hard-skill-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path><line x1="12" y1="6" x2="12" y2="8"></line><line x1="12" y1="16" x2="12" y2="18"></line></svg>
-                </div>
-                <div class="hard-skill-content">
-                  <h4 class="hard-skill-title">Sistem Kasir POS &amp; Petty Cash Management</h4>
-                  <p class="hard-skill-desc">Pengelolaan uang kas kecil (petty cash), operasional mesin kasir &amp; penghitungan stock opname</p>
-                </div>
-              </div>
-
-              <div class="hard-skill-item">
-                <div class="hard-skill-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-                </div>
-                <div class="hard-skill-content">
-                  <h4 class="hard-skill-title">Tata Kelola Kearsipan &amp; Kartu Inventaris (KIR)</h4>
-                  <p class="hard-skill-desc">Klasifikasi sistematis arsip dokumen masuk/keluar serta pencatatan inventaris barang fisik</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Non-Technical / Soft Skills -->
-          <div class="skills-box">
-            <h3 class="skills-box-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path><path d="M12 6v6l4 2"></path></svg>
-              <span>Kemampuan Non-Teknis (Soft Skills)</span>
-            </h3>
-
-            <div class="soft-skills-cloud">
-              <div class="soft-skill-pill">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Komunikasi Efektif</span>
-              </div>
-              <div class="soft-skill-pill">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Manajemen Waktu</span>
-              </div>
-              <div class="soft-skill-pill">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Perhatian Terhadap Detail</span>
-              </div>
-              <div class="soft-skill-pill">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Jujur &amp; Amanah</span>
-              </div>
-              <div class="soft-skill-pill">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Komitmen Tinggi</span>
-              </div>
-              <div class="soft-skill-pill">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Cepat Beradaptasi</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       EDITORIAL CALLOUT BANNER (Inspired by "The ROI Revolution" Style)
-       ========================================================================= -->
-  <section class="container">
-    <div class="cv-banner">
-      <div class="cv-banner-bg-stripes"></div>
-      <div class="status-pill" style="margin-bottom: 16px;">
-        <span class="status-dot"></span>
-        <span>Dokumen Riwayat Hidup Terverifikasi</span>
-      </div>
-      <h2 class="cv-banner-title">
-        The Value <span class="italic-serif">Of Dedication</span>
+    <div class="loader__core">
+      <h2 class="loader__welcome">
+        SYSTEM <span>INITIALIZING</span>...
       </h2>
-      <p class="cv-banner-desc">
-        Keahlian manajemen praktis, kedisiplinan operasional, dan kepribadian yang siap berkontribusi secara langsung pada pencapaian target perusahaan Anda.
-      </p>
-
-      <div class="cv-features-pills">
-        <span class="feature-pill-item">Administrasi Profesional</span>
-        <span class="feature-pill-item">Manajemen Keuangan Kasir</span>
-        <span class="feature-pill-item">Etos Kerja Berintegritas</span>
-        <span class="feature-pill-item">Siap Ditempatkan Segera</span>
-      </div>
-
-      <div class="cv-banner-actions">
-        <button class="btn btn-primary" data-open-modal="cv-modal">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-          <span>Buka Dokumen CV Resmi</span>
-        </button>
-        <a href="https://wa.me/6285211718008?text=Halo%20Chandra%20Arya%2C%20kami%20ingin%20mengundang%20Anda%20untuk%20sesi%20interview." target="_blank" class="btn btn-secondary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-          <span>Undang Wawancara</span>
-        </a>
+      <div class="loader__status">
+        <span class="loader__tagline">LOADING REPOSITORY ASSETS &amp; BLUEPRINT</span>
+        <div id="loader-count" class="loader__count">000%</div>
       </div>
     </div>
-  </section>
 
-  <!-- =========================================================================
-       CONTACT SECTION
-       ========================================================================= -->
-  <section id="contact" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-subtitle">Mari Terhubung</span>
-        <h2 class="section-title">Hubungi <span class="italic-serif">Saya Langsung</span></h2>
-        <p class="section-desc">Terbuka untuk posisi administrasi, kasir, operasional bisnis, maupun konsultasi kerjasama karir.</p>
+    <div class="loader__foot">
+      <div class="loader__bar">
+        <div id="loader-progress" class="loader__progress"></div>
       </div>
-
-      <div class="contact-grid">
-        <!-- Contact Cards -->
-        <div class="contact-info-cards">
-          <!-- WhatsApp Card -->
-          <a href="https://wa.me/6285211718008" target="_blank" class="contact-card-item">
-            <div class="contact-icon-box">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            </div>
-            <div class="contact-detail-text">
-              <span>Nomor Telepon &amp; WhatsApp</span>
-              <strong>0852-1171-8008</strong>
-            </div>
-          </a>
-
-          <!-- Email Card -->
-          <a href="mailto:chandraarya342@gmail.com" class="contact-card-item">
-            <div class="contact-icon-box">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            </div>
-            <div class="contact-detail-text">
-              <span>Alamat Email</span>
-              <strong>chandraarya342@gmail.com</strong>
-            </div>
-          </a>
-
-          <!-- Location Card -->
-          <div class="contact-card-item">
-            <div class="contact-icon-box">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            </div>
-            <div class="contact-detail-text">
-              <span>Lokasi Domisili</span>
-              <strong>Tangerang Selatan, Banten, Indonesia</strong>
-            </div>
-          </div>
-
-          <!-- Quick Action Buttons -->
-          <div style="display: flex; gap: 12px; margin-top: 10px;">
-            <button class="btn btn-outline-amber btn-sm" data-copy="085211718008">
-              <span>Salin No. HP/WA</span>
-            </button>
-            <button class="btn btn-outline-amber btn-sm" data-copy="chandraarya342@gmail.com">
-              <span>Salin Email</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Contact Form -->
-        <div class="contact-form-box">
-          <form id="contact-form">
-            <div class="form-group">
-              <label for="form-name" class="form-label">Nama Anda / Perusahaan</label>
-              <input type="text" id="form-name" class="form-input" placeholder="Contoh: Bpk. Hendra / PT Sejahtera Abadi" required />
-            </div>
-
-            <div class="form-group">
-              <label for="form-email" class="form-label">Alamat Email Anda</label>
-              <input type="email" id="form-email" class="form-input" placeholder="nama@perusahaan.com" required />
-            </div>
-
-            <div class="form-group">
-              <label for="form-subject" class="form-label">Subjek / Topik</label>
-              <input type="text" id="form-subject" class="form-input" placeholder="Tawaran Karir Administrasi / Interview Kerja" />
-            </div>
-
-            <div class="form-group">
-              <label for="form-message" class="form-label">Pesan Anda</label>
-              <textarea id="form-message" class="form-textarea" placeholder="Tuliskan detail tawaran atau pertanyaan Anda..." required></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary" style="width: 100%;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-              <span>Kirim Pesan via WhatsApp Langsung</span>
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       FOOTER
-       ========================================================================= -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-top">
-        <a href="#hero" class="brand-logo">
-          <div class="logo-badge">C</div>
-          <div class="brand-text">
-            <span class="brand-name">Chandra Arya Ferdiyansah</span>
-            <span class="brand-sub">Professional Portfolio</span>
-          </div>
-        </a>
-
-        <div style="display: flex; gap: 20px; align-items: center;">
-          <a href="#about" class="nav-link">Tentang</a>
-          <a href="#experience" class="nav-link">Pengalaman</a>
-          <a href="#education" class="nav-link">Pendidikan</a>
-          <a href="#skills" class="nav-link">Keahlian</a>
-          <a href="#contact" class="nav-link">Kontak</a>
-        </div>
-
-        <a href="#hero" class="back-to-top" aria-label="Kembali ke atas">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
-        </a>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 Chandra Arya Ferdiyansah. Seluruh hak cipta dilindungi.</p>
-        <p style="color: var(--accent-amber);">Manajemen Perkantoran &amp; Layanan Bisnis</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- =========================================================================
-       CV MODAL VIEWER
-       ========================================================================= -->
-  <div id="cv-modal" class="modal-backdrop">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title font-serif">Dokumen Riwayat Hidup (CV)</h3>
-        <button class="modal-close-btn" data-close-modal aria-label="Tutup modal">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-        </button>
-      </div>
-
-      <div class="modal-body">
-        <img src="assets/images/cv-document.jpg" alt="Dokumen CV Chandra Arya Ferdiyansah" />
-      </div>
-
-      <div class="modal-footer">
-        <button class="btn btn-secondary btn-sm" onclick="window.print()">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
-          <span>Cetak / Simpan PDF</span>
-        </button>
-        <a href="assets/images/cv-document.jpg" download="CV-Chandra-Arya-Ferdiyansah.jpg" class="btn btn-primary btn-sm">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-          <span>Unduh Berkas CV</span>
-        </a>
+      <div style="display: flex; justify-content: space-between;">
+        <span class="mono-label">TANGERANG SELATAN, ID</span>
+        <span class="mono-label">READY FOR PROFESSIONAL DEPLOYMENT</span>
       </div>
     </div>
   </div>
 
-  <!-- Custom Scripts -->
+  <!-- =========================================================================
+       ATMOSPHERIC BLUEPRINT BACKGROUND
+       ========================================================================= -->
+  <div class="blueprint">
+    <div class="blueprint__grid"></div>
+    <div class="blueprint__scan"></div>
+    <div class="blueprint__vignette"></div>
+  </div>
+
+  <!-- =========================================================================
+       STICKY TECHNICAL NAVIGATION (.nav)
+       ========================================================================= -->
+  <header class="nav">
+    <div class="page-container nav__inner">
+      <a href="#hero" class="nav__brand">
+        <span class="nav__mark">CAF // 01</span>
+        <div class="nav__identity">
+          <span class="nav__name">Chandra Arya</span>
+          <span class="nav__sub">Office &amp; Business Ops</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav__links">
+          <li><a href="#work" class="nav__link">01 // Work</a></li>
+          <li><a href="#about" class="nav__link">02 // Dossier</a></li>
+          <li><a href="#skills" class="nav__link">03 // Capabilities</a></li>
+          <li><a href="#contact" class="nav__link">04 // Transmission</a></li>
+        </ul>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="#contact" class="nav__status">
+          <span class="nav__dot"></span>
+          <span>Available</span>
+        </a>
+        <button class="nav__toggle" aria-label="Toggle Navigation">[MENU]</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =======================================================================
+         HERO SECTION (.hero)
+         ======================================================================= -->
+    <section id="hero" class="hero">
+      <div class="page-container">
+        
+        <div class="hero__welcome">
+          <span class="hero__bracket">[</span>
+          <span class="hero__decrypt" data-decrypt="WELCOME TO CHANDRA ARYA // PORTFOLIO LAB">WELCOME TO CHANDRA ARYA // PORTFOLIO LAB</span>
+          <span class="hero__bracket">]</span>
+        </div>
+
+        <div class="hero__grid">
+          
+          <!-- Hero Left: Brutalist Typography -->
+          <div class="hero__left">
+            <h1 class="hero__title">
+              CHANDRA<br />
+              ARYA<br />
+              <span class="glitch">FERDIYANSAH</span>
+            </h1>
+
+            <div class="hero__role">
+              OFFICE MANAGEMENT · BUSINESS OPERATIONS · CASHIER &amp; INVENTORY
+            </div>
+
+            <p class="hero__tagline">
+              Lulusan <strong>Manajemen Perkantoran dan Layanan Bisnis</strong> berintegritas tinggi dengan rekam jejak praktis di bidang administrasi persuratan, pelayanan publik instansi, operasional kasir, rekonsiliasi omset, serta pengelolaan inventaris terorganisir.
+            </p>
+
+            <div class="hero__cta-row">
+              <a href="https://wa.me/6285211718008?text=Halo%20Chandra%2C%20saya%20tertarik%20dengan%20portofolio%20Anda%20dan%20ingin%20berdiskusi%20mengenai%20peluang%20karir." target="_blank" class="btn btn-primary">
+                <span>CONNECT VIA WHATSAPP</span>
+                <span>-></span>
+              </a>
+
+              <button class="btn btn-ghost" data-open-modal="cv-modal">
+                <span>VIEW ACCESS PASS (CV)</span>
+              </button>
+            </div>
+
+            <div class="hero__meta">
+              <div class="meta-item">
+                <span class="meta-k">GPA SCORE</span>
+                <span class="meta-v accent">88.02 / 100</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-k">LOCATION</span>
+                <span class="meta-v">TANGSEL, ID</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-k">EDUCATION</span>
+                <span class="meta-v">SMK 01 CIPUTAT</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-k">STATUS</span>
+                <span class="meta-v accent">READY TO DEPLOY</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Right: 3D Interactive Access Pass -->
+          <div class="hero__right">
+            <div id="access-pass" class="access-pass">
+              <div class="pass-clip"></div>
+
+              <div class="pass-head">
+                <div class="pass-org">
+                  <span class="pass-org-title">DESIGN LAB PASS</span>
+                  <span class="pass-org-sub">OFFICE &amp; BUSINESS OPS</span>
+                </div>
+                <div class="pass-stamp">VERIFIED</div>
+              </div>
+
+              <div class="pass-photo-frame">
+                <img src="assets/images/chandra-profile.jpg" alt="Chandra Arya Ferdiyansah Profile" />
+                <div class="pass-photo-overlay"></div>
+                <span class="pass-photo-tag">OPERATOR // CAF-2006</span>
+              </div>
+
+              <div class="pass-details">
+                <div class="pass-field">
+                  <span class="pass-label">NAME</span>
+                  <span class="pass-value">CHANDRA ARYA F.</span>
+                </div>
+                <div class="pass-field">
+                  <span class="pass-label">DISCIPLINE</span>
+                  <span class="pass-value">BUSINESS MGMT</span>
+                </div>
+                <div class="pass-field">
+                  <span class="pass-label">GRADUATION</span>
+                  <span class="pass-value">CLASS OF 2025</span>
+                </div>
+                <div class="pass-field">
+                  <span class="pass-label">AVERAGE SCORE</span>
+                  <span class="pass-value accent">88.02 (COMPETENT)</span>
+                </div>
+              </div>
+
+              <div class="pass-barcode-area">
+                <div class="pass-barcode">
+                  <span class="w-1"></span>
+                  <span class="w-2"></span>
+                  <span class="space"></span>
+                  <span class="w-3"></span>
+                  <span class="w-1"></span>
+                  <span class="space"></span>
+                  <span class="w-2"></span>
+                  <span class="w-1"></span>
+                  <span class="w-3"></span>
+                  <span class="space"></span>
+                  <span class="w-2"></span>
+                  <span class="w-1"></span>
+                </div>
+                <span class="pass-code">#CAF-8802-2025</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         01 // SELECTED OPERATIONS & EXPERIENCE (.projects__list)
+         ======================================================================= -->
+    <section id="work" class="section">
+      <div class="page-container">
+        
+        <div class="section-tag">
+          <span class="num">[ 01 // SELECTED OPERATIONS &amp; EXPERIENCE ]</span>
+          <div class="line"></div>
+        </div>
+
+        <div class="section-head">
+          <h2 class="section-h2">FIELD <span>RECORDS</span></h2>
+          <p class="section-p">Rekam jejak praktis pelaksanaan tugas operasional, pencatatan keuangan harian, dan tata kelola persuratan kedinasan.</p>
+        </div>
+
+        <div class="projects__list">
+
+          <!-- Plate 01: Burger Bangor -->
+          <article class="plate">
+            <div class="plate__top">
+              <div class="plate__id-row">
+                <span class="plate__id">[PLATE-01]</span>
+                <span class="plate__company">BURGER BANGOR // FULL TIME</span>
+              </div>
+              <span class="plate__period">25 JUL – 01 DES 2025</span>
+            </div>
+
+            <h3 class="plate__title">Crew Outlet &amp; Kasir Utama</h3>
+            <p class="plate__desc">
+              Menjalankan operasional gerai retail F&amp;B dengan sistem kerja adaptif dan disiplin tinggi, memegang kendali ganda pada bagian front-end kasir serta eksekusi pesanan.
+            </p>
+
+            <ul class="plate__tasks">
+              <li>Bertanggung jawab penuh atas transaksi pembayaran kasir, pencatatan dan rekonsiliasi hasil penjualan harian.</li>
+              <li>Melakukan stock opname berkala pada bahan baku dapur untuk meminimalisir selisih dan pemborosan.</li>
+              <li>Menghitung petty cash (kas kecil) harian dan merekapitulasi laporan omset gerai.</li>
+              <li>Konsisten mengejar target penjualan bersama tim dan menjaga higienitas serta sanitasi seluruh area kerja.</li>
+            </ul>
+
+            <div class="plate__stack">
+              <span class="mono-tag">POS Cashier</span>
+              <span class="mono-tag">Stock Opname</span>
+              <span class="mono-tag">Petty Cash</span>
+              <span class="mono-tag">Rekap Omset</span>
+              <span class="mono-tag">Target Sales</span>
+            </div>
+          </article>
+
+          <!-- Plate 02: Teh Poci -->
+          <article class="plate">
+            <div class="plate__top">
+              <div class="plate__id-row">
+                <span class="plate__id">[PLATE-02]</span>
+                <span class="plate__company">TEH POCI // PART TIME</span>
+              </div>
+              <span class="plate__period">01 FEB – 01 JUN 2024</span>
+            </div>
+
+            <h3 class="plate__title">Crew Outlet &amp; Produksi F&amp;B</h3>
+            <p class="plate__desc">
+              Fokus pada pelayanan konsumen cepat saji, konsistensi racikan produk, dan akurasi perputaran stok barang fisik di outlet.
+            </p>
+
+            <ul class="plate__tasks">
+              <li>Meracik produk minuman teh berkualitas tinggi sesuai formula dan takaran baku perusahaan.</li>
+              <li>Mendata seluruh hasil penjualan harian dan memverifikasi stok barang keluar-masuk.</li>
+              <li>Memberikan pelayanan konsumen yang ramah dan sigap guna mendorong pencapaian target penjualan outlet.</li>
+              <li>Memelihara kebersihan perlengkapan produksi dan area gerai secara disiplin.</li>
+            </ul>
+
+            <div class="plate__stack">
+              <span class="mono-tag">Customer Service</span>
+              <span class="mono-tag">Stock Registry</span>
+              <span class="mono-tag">Sales Tracking</span>
+              <span class="mono-tag">Standard Formula</span>
+            </div>
+          </article>
+
+          <!-- Plate 03: Kelurahan Ciputat Pelayanan -->
+          <article class="plate">
+            <div class="plate__top">
+              <div class="plate__id-row">
+                <span class="plate__id">[PLATE-03]</span>
+                <span class="plate__company">KELURAHAN CIPUTAT // PELAYANAN PUBLIK</span>
+              </div>
+              <span class="plate__period">02 OKT – 29 DES 2023</span>
+            </div>
+
+            <h3 class="plate__title">Pelayanan Kesejahteraan Sosial</h3>
+            <p class="plate__desc">
+              Bertugas di unit garis depan (front office) kantor kelurahan untuk melayani administrasi kependudukan dan kebutuhan sosial masyarakat.
+            </p>
+
+            <ul class="plate__tasks">
+              <li>Melayani permohonan warga secara santun dan memproses penerbitan Surat Keterangan Tidak Mampu (SKTM).</li>
+              <li>Menyusun dokumen surat pengantar nikah dan surat pernyataan kedinasan sesuai standar prosedur operasional.</li>
+              <li>Melakukan pencatatan berkala dan pendataan fisik pada Kartu Inventaris Ruangan (KIR) instansi.</li>
+            </ul>
+
+            <div class="plate__stack">
+              <span class="mono-tag">Pelayanan Masyarakat</span>
+              <span class="mono-tag">SKTM Processing</span>
+              <span class="mono-tag">Kartu Inventaris (KIR)</span>
+              <span class="mono-tag">Komunikasi Kedinasan</span>
+            </div>
+          </article>
+
+          <!-- Plate 04: Kelurahan Ciputat Magang Kearsipan -->
+          <article class="plate">
+            <div class="plate__top">
+              <div class="plate__id-row">
+                <span class="plate__id">[PLATE-04]</span>
+                <span class="plate__company">KELURAHAN CIPUTAT // MAGANG ADMINISTRASI</span>
+              </div>
+              <span class="plate__period">02 OKT – 29 DES 2023</span>
+            </div>
+
+            <h3 class="plate__title">Magang Administrasi &amp; Tata Kelola Kearsipan</h3>
+            <p class="plate__desc">
+              Praktik kerja lapangan kejuruan manajemen perkantoran dalam penataan sistematis berkas dan persuratan resmi pemerintahan.
+            </p>
+
+            <ul class="plate__tasks">
+              <li>Membantu pengetikan, formatting, dan penyusunan surat-menyurat kedinasan masuk dan keluar.</li>
+              <li>Mengklasifikasikan dokumen ke dalam map arsip sesuai kode klasifikasi kearsipan standar.</li>
+              <li>Memverifikasi berkas yang wajib diarsipkan dan mencatatkan data ke buku registrasi persuratan.</li>
+            </ul>
+
+            <div class="plate__stack">
+              <span class="mono-tag">Tata Kelola Surat</span>
+              <span class="mono-tag">Filing &amp; Kearsipan</span>
+              <span class="mono-tag">Verifikasi Berkas</span>
+              <span class="mono-tag">Data Registry</span>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         02 // DOSSIER & PROFILE (.about)
+         ======================================================================= -->
+    <section id="about" class="section">
+      <div class="page-container">
+        
+        <div class="section-tag">
+          <span class="num">[ 02 // DOSSIER &amp; PROFILE ]</span>
+          <div class="line"></div>
+        </div>
+
+        <div class="about__grid">
+          <div>
+            <p class="about__lead">
+              Lulusan <span>Manajemen Perkantoran &amp; Layanan Bisnis</span> dari SMK Muhammadiyah 01 Ciputat dengan nilai akhir <span>88.02</span> yang siap membawa energi positif dan kedisiplinan ke dunia kerja.
+            </p>
+            <p class="about__body">
+              Lahir di Jakarta pada 14 November 2006, saya membangun pemahaman kokoh mengenai otomatisasi perkantoran, pengarsipan berkas, pendataan inventaris, serta pelayanan publik langsung. Berbekal pengalaman di instansi pemerintahan maupun industri retail/F&amp;B yang bergerak cepat, tujuan karir saya adalah dapat berkontribusi nyata mensejahterakan dan memajukan tempat kerja yang saya tuju.
+            </p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <span class="mono-tag">Etos Kerja Tinggi</span>
+              <span class="mono-tag">Jujur &amp; Amanah</span>
+              <span class="mono-tag">Cepat Beradaptasi</span>
+              <span class="mono-tag">Detail Oriented</span>
+            </div>
+          </div>
+
+          <div class="about__facts">
+            <div class="fact-item">
+              <span class="fact-k">DATE &amp; PLACE OF BIRTH</span>
+              <span class="fact-v">Jakarta, 14 November 2006</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-k">CURRENT BASE</span>
+              <span class="fact-v">Tangerang Selatan, Banten</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-k">EDUCATION ALMA MATER</span>
+              <span class="fact-v">SMK Muhammadiyah 01 Ciputat</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-k">AVERAGE GRADUATION SCORE</span>
+              <span class="fact-v accent">88.02 / 100</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-k">ACADEMIC PERIOD</span>
+              <span class="fact-v">2022 – 2025</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-k">DEPLOYMENT AVAILABILITY</span>
+              <span class="fact-v accent">Immediate / Open for Hire</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         03 // CAPABILITIES & SKILL MATRIX (.about__caps)
+         ======================================================================= -->
+    <section id="skills" class="section">
+      <div class="page-container">
+        
+        <div class="section-tag">
+          <span class="num">[ 03 // CAPABILITIES &amp; SKILL MATRIX ]</span>
+          <div class="line"></div>
+        </div>
+
+        <div class="section-head">
+          <h2 class="section-h2">CORE <span>COMPETENCIES</span></h2>
+          <p class="section-p">Daftar kapabilitas operasional dan teknis berbasis standar kejuruan manajemen bisnis tanpa angka persentase fiktif.</p>
+        </div>
+
+        <div class="caps__grid">
+          
+          <div class="cap-card">
+            <div class="cap-card__id">[MOD-01]</div>
+            <h3 class="cap-card__title">Microsoft Office Ecosystem</h3>
+            <p class="cap-card__desc">Penguasaan aplikasi produktivitas utama untuk penyusunan surat, rekapitulasi data, kalkulasi formula, dan perancangan slide presentasi informatif.</p>
+            <div class="cap-card__chips">
+              <span class="cap-chip">Word (Surat &amp; Format)</span>
+              <span class="cap-chip">Excel (Formula &amp; Rekap)</span>
+              <span class="cap-chip">PowerPoint</span>
+            </div>
+          </div>
+
+          <div class="cap-card">
+            <div class="cap-card__id">[MOD-02]</div>
+            <h3 class="cap-card__title">Financial &amp; Cash Handling</h3>
+            <p class="cap-card__desc">Pengoperasian sistem kasir penjualan, penghitungan uang kas kecil (petty cash), pembukuan harian, dan rekonsiliasi omset fisik dengan laporan.</p>
+            <div class="cap-card__chips">
+              <span class="cap-chip">POS Register</span>
+              <span class="cap-chip">Petty Cash Mgmt</span>
+              <span class="cap-chip">Rekapitulasi Omset</span>
+            </div>
+          </div>
+
+          <div class="cap-card">
+            <div class="cap-card__id">[MOD-03]</div>
+            <h3 class="cap-card__title">Administration &amp; Filing</h3>
+            <p class="cap-card__desc">Sistematisasi penataan surat masuk dan surat keluar, penomoran agenda persuratan kedinasan, serta verifikasi kelayakan dokumen sebelum pengarsipan.</p>
+            <div class="cap-card__chips">
+              <span class="cap-chip">Document Filing</span>
+              <span class="cap-chip">Agenda Registrasi</span>
+              <span class="cap-chip">Korespondensi</span>
+            </div>
+          </div>
+
+          <div class="cap-card">
+            <div class="cap-card__id">[MOD-04]</div>
+            <h3 class="cap-card__title">Inventory &amp; Stock Control</h3>
+            <p class="cap-card__desc">Pencatatan dan penghitungan stok opname fisik di outlet, pencocokan keluar-masuk barang, dan pendataan Kartu Inventaris Ruangan (KIR).</p>
+            <div class="cap-card__chips">
+              <span class="cap-chip">Stock Opname</span>
+              <span class="cap-chip">Kartu Inventaris (KIR)</span>
+              <span class="cap-chip">Quality Control</span>
+            </div>
+          </div>
+
+          <div class="cap-card">
+            <div class="cap-card__id">[MOD-05]</div>
+            <h3 class="cap-card__title">Interpersonal &amp; Work Ethics</h3>
+            <p class="cap-card__desc">Kemampuan berkomunikasi santun kepada warga maupun pelanggan, manajemen waktu yang presisi, kedisiplinan, kejujuran tinggi, dan daya adaptasi cepat.</p>
+            <div class="cap-card__chips">
+              <span class="cap-chip">Effective Communication</span>
+              <span class="cap-chip">Time Management</span>
+              <span class="cap-chip">High Integrity</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         04 // TRANSMISSION & CONTACT (.contact)
+         ======================================================================= -->
+    <section id="contact" class="section">
+      <div class="page-container">
+        
+        <div class="section-tag">
+          <span class="num">[ 04 // INITIALIZE TRANSMISSION ]</span>
+          <div class="line"></div>
+        </div>
+
+        <div class="contact-box">
+          <h2 class="contact-headline">
+            LET'S WORK <span>TOGETHER.</span>
+          </h2>
+          <p class="contact-sub">
+            Terbuka untuk posisi administrasi perkantoran, staf kasir, operasional bisnis, maupun konsultasi peluang karir profesional.
+          </p>
+
+          <div class="contact-actions">
+            <a href="https://wa.me/6285211718008?text=Halo%20Chandra%20Arya%2C%20saya%20tertarik%20merekrut%20atau%20mengundang%20Anda%20untuk%20sesi%20interview." target="_blank" class="btn btn-primary">
+              <span>TRANSMIT VIA WHATSAPP</span>
+              <span>-></span>
+            </a>
+            <button class="btn btn-ghost" data-open-modal="cv-modal">
+              <span>VIEW FULL CV DOCUMENT</span>
+            </button>
+          </div>
+
+          <div class="contact-methods-grid">
+            <div class="method-item">
+              <span class="method-k">DIRECT WHATSAPP</span>
+              <a href="https://wa.me/6285211718008" target="_blank" class="method-v">0852-1171-8008</a>
+            </div>
+            <div class="method-item">
+              <span class="method-k">EMAIL INBOX</span>
+              <a href="mailto:chandraarya342@gmail.com" class="method-v">chandraarya342@gmail.com</a>
+            </div>
+            <div class="method-item">
+              <span class="method-k">LOCATION BASE</span>
+              <span class="method-v">Tangerang Selatan, Banten</span>
+            </div>
+            <div class="method-item">
+              <span class="method-k">QUICK ACTION</span>
+              <div style="display: flex; gap: 8px; margin-top: 4px;">
+                <button class="btn btn-ghost btn-sm" data-copy="085211718008">COPY PHONE</button>
+                <button class="btn btn-ghost btn-sm" data-copy="chandraarya342@gmail.com">COPY EMAIL</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER (.footer)
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="page-container footer__inner">
+      <div class="footer__left">
+        <span class="mono-label">CAF // 2026</span>
+        <span id="wib-clock" class="footer__clock">JKT // 00:00:00 WIB</span>
+        <span class="footer__copy">&copy; 2026 Chandra Arya Ferdiyansah. All rights reserved.</span>
+      </div>
+
+      <a href="#hero" class="footer__top-link">[BACK TO TOP ↑]</a>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODAL (CV DOCUMENT PREVIEW)
+       ========================================================================= -->
+  <div id="cv-modal" class="modal-backdrop">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-title">[DOC // CV_CHANDRA_ARYA_FERDIYANSAH.JPG]</span>
+        <button class="modal-close" data-close-modal>[X CLOSE]</button>
+      </div>
+
+      <div class="modal-body">
+        <img src="assets/images/cv-document.jpg" alt="Dokumen CV Chandra Arya Ferdiyansah Asli" />
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-ghost btn-sm" onclick="window.print()">PRINT / PDF</button>
+        <a href="assets/images/cv-document.jpg" download="CV-Chandra-Arya-Ferdiyansah.jpg" class="btn btn-primary btn-sm">DOWNLOAD DOCUMENT</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>
