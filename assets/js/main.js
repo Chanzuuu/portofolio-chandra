@@ -1,10 +1,17 @@
 /**
  * DESIGN LAB JAVASCRIPT — CHANDRA ARYA FERDIYANSAH
- * Features: Preloader Counter, 3D Tilt Access Pass, Text Decrypt Scramble, WIB Live Clock, Modal & Toast
+ * Full Animation Suite:
+ * - Lenis Inertia Smooth Scroll
+ * - GSAP & ScrollTrigger Entrance & Stagger Reveals
+ * - Running Hamster Preloader System Counter
+ * - 3D Card Physics with Dynamic Holographic Glare
+ * - Text Decryption / Hacker Scramble Effect
+ * - Live Jakarta WIB (UTC+7) Clock
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initPreloader();
+  const lenis = initLenis();
+  initPreloader(lenis);
   initTextScramble();
   initTiltPass();
   initLiveClock();
@@ -14,9 +21,46 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* --------------------------------------------------------------------------
-   1. SYSTEM PRELOADER COUNTER
+   1. LENIS SMOOTH INERTIA SCROLL
    -------------------------------------------------------------------------- */
-function initPreloader() {
+function initLenis() {
+  if (typeof Lenis === 'undefined') return null;
+
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    orientation: 'vertical',
+    gestureOrientation: 'vertical',
+    smoothWheel: true,
+    wheelMultiplier: 1.0,
+    touchMultiplier: 2.0,
+  });
+
+  // Sync Lenis with GSAP ScrollTrigger if available
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+    lenis.on('scroll', ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
+  } else {
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  }
+
+  return lenis;
+}
+
+/* --------------------------------------------------------------------------
+   2. PRELOADER COUNTER & HERO ENTRANCE (GSAP)
+   -------------------------------------------------------------------------- */
+function initPreloader(lenis) {
   const loader = document.getElementById('preloader');
   const countEl = document.getElementById('loader-count');
   const progressEl = document.getElementById('loader-progress');
@@ -25,7 +69,7 @@ function initPreloader() {
 
   let current = 0;
   const target = 100;
-  const duration = 1200; // ms
+  const duration = 1400; // ms
   const interval = 20;
   const increment = target / (duration / interval);
 
@@ -36,11 +80,26 @@ function initPreloader() {
       clearInterval(timer);
       countEl.textContent = '100%';
       progressEl.style.width = '100%';
-      
+
       setTimeout(() => {
-        loader.classList.add('is-done');
-        triggerInitialScramble();
-      }, 300);
+        if (typeof gsap !== 'undefined') {
+          gsap.to(loader, {
+            opacity: 0,
+            y: -20,
+            duration: 0.6,
+            ease: 'power2.inOut',
+            onComplete: () => {
+              loader.classList.add('is-done');
+              triggerHeroEntrance();
+              initScrollAnimations();
+            }
+          });
+        } else {
+          loader.classList.add('is-done');
+          triggerHeroEntrance();
+          initScrollAnimations();
+        }
+      }, 350);
     } else {
       const display = Math.floor(current).toString().padStart(3, '0');
       countEl.textContent = `${display}%`;
@@ -49,15 +108,166 @@ function initPreloader() {
   }, interval);
 }
 
+function triggerHeroEntrance() {
+  if (typeof gsap === 'undefined') {
+    triggerInitialScramble();
+    return;
+  }
+
+  const tl = gsap.timeline({
+    onComplete: () => {
+      triggerInitialScramble();
+    }
+  });
+
+  tl.from('.hero__welcome', {
+    y: 20,
+    opacity: 0,
+    duration: 0.6,
+    ease: 'power3.out'
+  })
+  .from('.hero__title', {
+    y: 50,
+    opacity: 0,
+    duration: 0.9,
+    ease: 'power4.out'
+  }, '-=0.3')
+  .from('.hero__role', {
+    x: -20,
+    opacity: 0,
+    duration: 0.6,
+    ease: 'power3.out'
+  }, '-=0.5')
+  .from('.hero__tagline', {
+    y: 20,
+    opacity: 0,
+    duration: 0.7,
+    ease: 'power3.out'
+  }, '-=0.4')
+  .from('.hero__cta-row', {
+    y: 20,
+    opacity: 0,
+    duration: 0.6,
+    ease: 'power3.out'
+  }, '-=0.4')
+  .from('.lanyard-wrap', {
+    y: -60,
+    opacity: 0,
+    rotateY: 20,
+    duration: 1.1,
+    ease: 'back.out(1.2)'
+  }, '-=0.8');
+}
+
 /* --------------------------------------------------------------------------
-   2. TEXT DECRYPTION SCRAMBLE EFFECT
+   3. GSAP SCROLLTRIGGER REVEAL ANIMATIONS
+   -------------------------------------------------------------------------- */
+function initScrollAnimations() {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+  // Animate Section Tags (expanding line)
+  gsap.utils.toArray('.section-tag').forEach(tag => {
+    const line = tag.querySelector('.line');
+    if (line) {
+      gsap.from(line, {
+        scaleX: 0,
+        duration: 0.9,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: tag,
+          start: 'top 85%'
+        }
+      });
+    }
+  });
+
+  // Animate Section Headings
+  gsap.utils.toArray('.section-head').forEach(head => {
+    gsap.from(head, {
+      y: 35,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: head,
+        start: 'top 85%'
+      }
+    });
+  });
+
+  // Animate Project Plates (Staggered Slide Up)
+  const plates = gsap.utils.toArray('.plate');
+  if (plates.length) {
+    gsap.from(plates, {
+      y: 50,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.16,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.projects__list',
+        start: 'top 80%'
+      }
+    });
+  }
+
+  // Animate Dossier Facts Matrix
+  const factItems = gsap.utils.toArray('.fact-item');
+  if (factItems.length) {
+    gsap.from(factItems, {
+      y: 25,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.08,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.about__facts',
+        start: 'top 85%'
+      }
+    });
+  }
+
+  // Animate Capability Cards
+  const capCards = gsap.utils.toArray('.cap-card');
+  if (capCards.length) {
+    gsap.from(capCards, {
+      y: 40,
+      opacity: 0,
+      duration: 0.7,
+      stagger: 0.1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.caps__grid',
+        start: 'top 85%'
+      }
+    });
+  }
+
+  // Animate Contact Box
+  const contactBox = document.querySelector('.contact-box');
+  if (contactBox) {
+    gsap.from(contactBox, {
+      scale: 0.96,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: contactBox,
+        start: 'top 85%'
+      }
+    });
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. TEXT DECRYPTION SCRAMBLE EFFECT
    -------------------------------------------------------------------------- */
 const glyphs = 'ABCDEF0123456789//<>[]!@#$%^&*()_+-=~';
 
-function scrambleText(element, finalText, speed = 30) {
+function scrambleText(element, finalText, speed = 25) {
   let iteration = 0;
   const original = finalText || element.innerText;
-  
+
   const interval = setInterval(() => {
     element.innerText = original
       .split('')
@@ -90,10 +300,14 @@ function triggerInitialScramble() {
   if (heroDecrypt) {
     scrambleText(heroDecrypt, heroDecrypt.innerText);
   }
+  const glitch = document.querySelector('.glitch');
+  if (glitch) {
+    scrambleText(glitch, glitch.innerText);
+  }
 }
 
 /* --------------------------------------------------------------------------
-   3. 3D INTERACTIVE TILT PASS
+   5. 3D INTERACTIVE TILT PASS & DYNAMIC HOLOGRAPHIC GLARE
    -------------------------------------------------------------------------- */
 function initTiltPass() {
   const pass = document.getElementById('access-pass');
@@ -103,25 +317,33 @@ function initTiltPass() {
     const rect = pass.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    
+
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    
-    const rotateX = ((y - centerY) / centerY) * -12;
-    const rotateY = ((x - centerX) / centerX) * 12;
-    
-    pass.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-    pass.style.boxShadow = `${-rotateY * 2}px ${rotateX * 2}px 40px rgba(255, 0, 168, 0.25)`;
+
+    const rotateX = ((y - centerY) / centerY) * -16;
+    const rotateY = ((x - centerX) / centerX) * 16;
+
+    // Set holographic glare position
+    const glareX = (x / rect.width) * 100;
+    const glareY = (y / rect.height) * 100;
+    pass.style.setProperty('--glare-x', `${glareX}%`);
+    pass.style.setProperty('--glare-y', `${glareY}%`);
+
+    pass.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`;
+    pass.style.boxShadow = `${-rotateY * 2.5}px ${rotateX * 2.5}px 45px rgba(255, 0, 168, 0.3)`;
   });
 
   pass.addEventListener('mouseleave', () => {
     pass.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
     pass.style.boxShadow = '0 30px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 0, 168, 0.1)';
+    pass.style.setProperty('--glare-x', '50%');
+    pass.style.setProperty('--glare-y', '50%');
   });
 }
 
 /* --------------------------------------------------------------------------
-   4. LIVE JAKARTA WIB (UTC+7) CLOCK
+   6. LIVE JAKARTA WIB (UTC+7) CLOCK
    -------------------------------------------------------------------------- */
 function initLiveClock() {
   const clockEl = document.getElementById('wib-clock');
@@ -129,7 +351,6 @@ function initLiveClock() {
 
   function updateClock() {
     const now = new Date();
-    // Jakarta is UTC+7
     const options = {
       timeZone: 'Asia/Jakarta',
       hour12: false,
@@ -146,7 +367,7 @@ function initLiveClock() {
 }
 
 /* --------------------------------------------------------------------------
-   5. NAVIGATION
+   7. NAVIGATION
    -------------------------------------------------------------------------- */
 function initNav() {
   const toggle = document.querySelector('.nav__toggle');
@@ -165,7 +386,7 @@ function initNav() {
     });
   }
 
-  // Active section spy
+  // Active section indicator
   window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section[id]');
     const scrollPos = window.scrollY + 140;
@@ -188,7 +409,7 @@ function initNav() {
 }
 
 /* --------------------------------------------------------------------------
-   6. MODAL PREVIEW (CV DOKUMEN)
+   8. MODAL PREVIEW (CV DOKUMEN)
    -------------------------------------------------------------------------- */
 function initModal() {
   const openBtns = document.querySelectorAll('[data-open-modal="cv-modal"]');
@@ -228,10 +449,9 @@ function initModal() {
 }
 
 /* --------------------------------------------------------------------------
-   7. ACTIONS: COPY & WHATSAPP GENERATOR
+   9. ACTIONS: COPY TO CLIPBOARD
    -------------------------------------------------------------------------- */
 function initActions() {
-  // Copy to clipboard
   const copyBtns = document.querySelectorAll('[data-copy]');
   copyBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -244,33 +464,6 @@ function initActions() {
       });
     });
   });
-
-  // Contact form to WhatsApp
-  const form = document.getElementById('transmission-form');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('t-name').value.trim();
-      const org = document.getElementById('t-org').value.trim();
-      const message = document.getElementById('t-message').value.trim();
-
-      if (!name || !message) {
-        showToast('[VALIDATION] Required fields missing');
-        return;
-      }
-
-      const waPhone = '6285211718008';
-      const text = encodeURIComponent(
-        `Halo Chandra Arya,\nSaya ${name} (${org || 'Pemberi Kerja'}).\n\nPesan:\n${message}`
-      );
-      showToast('[SYS] Initializing WhatsApp transmission...', 2500);
-
-      setTimeout(() => {
-        window.open(`https://wa.me/${waPhone}?text=${text}`, '_blank');
-        form.reset();
-      }, 700);
-    });
-  }
 }
 
 /* Toast */

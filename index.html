@@ -17,7 +17,7 @@
 <body>
 
   <!-- =========================================================================
-       PRELOADER SCREEN (.loader)
+       PRELOADER SCREEN (.loader) WITH RUNNING HAMSTER WHEEL
        ========================================================================= -->
   <div id="preloader" class="loader">
     <div class="loader__head">
@@ -26,12 +26,36 @@
     </div>
 
     <div class="loader__core">
-      <h2 class="loader__welcome">
-        SYSTEM <span>INITIALIZING</span>...
-      </h2>
-      <div class="loader__status">
-        <span class="loader__tagline">LOADING REPOSITORY ASSETS &amp; BLUEPRINT</span>
-        <div id="loader-count" class="loader__count">000%</div>
+      <div class="loader__text-wrap">
+        <h2 class="loader__welcome">
+          SYSTEM <span>INITIALIZING</span>...
+        </h2>
+        <div class="loader__status">
+          <span class="loader__tagline">LOADING REPOSITORY ASSETS &amp; BLUEPRINT PHYSICS</span>
+          <div id="loader-count" class="loader__count">000%</div>
+        </div>
+      </div>
+
+      <!-- Exact Running Hamster Rig from Design Lab -->
+      <div class="hamster-rig">
+        <div aria-hidden="true" class="wheel-and-hamster">
+          <div class="wheel"></div>
+          <div class="hamster">
+            <div class="hamster__body">
+              <div class="hamster__head">
+                <div class="hamster__ear"></div>
+                <div class="hamster__eye"></div>
+                <div class="hamster__nose"></div>
+              </div>
+              <div class="hamster__limb hamster__limb--fr"></div>
+              <div class="hamster__limb hamster__limb--fl"></div>
+              <div class="hamster__limb hamster__limb--br"></div>
+              <div class="hamster__limb hamster__limb--bl"></div>
+              <div class="hamster__tail"></div>
+            </div>
+          </div>
+          <div class="spoke"></div>
+        </div>
       </div>
     </div>
 
@@ -47,7 +71,7 @@
   </div>
 
   <!-- =========================================================================
-       ATMOSPHERIC BLUEPRINT BACKGROUND
+       ATMOSPHERIC BLUEPRINT BACKGROUND (GRID + SCAN BEAM + VIGNETTE)
        ========================================================================= -->
   <div class="blueprint">
     <div class="blueprint__grid"></div>
@@ -107,7 +131,7 @@
             <h1 class="hero__title">
               CHANDRA<br />
               ARYA<br />
-              <span class="glitch">FERDIYANSAH</span>
+              <span class="glitch" data-decrypt="FERDIYANSAH">FERDIYANSAH</span>
             </h1>
 
             <div class="hero__role">
@@ -149,61 +173,70 @@
             </div>
           </div>
 
-          <!-- Hero Right: 3D Interactive Access Pass -->
+          <!-- Hero Right: 3D Interactive Access Pass with Lanyard -->
           <div class="hero__right">
-            <div id="access-pass" class="access-pass">
-              <div class="pass-clip"></div>
-
-              <div class="pass-head">
-                <div class="pass-org">
-                  <span class="pass-org-title">DESIGN LAB PASS</span>
-                  <span class="pass-org-sub">OFFICE &amp; BUSINESS OPS</span>
-                </div>
-                <div class="pass-stamp">VERIFIED</div>
+            <div class="lanyard-wrap">
+              <div class="lanyard-strap"></div>
+              <div class="lanyard-clip">
+                <div class="lanyard-ring"></div>
               </div>
 
-              <div class="pass-photo-frame">
-                <img src="assets/images/chandra-profile.jpg" alt="Chandra Arya Ferdiyansah Profile" />
-                <div class="pass-photo-overlay"></div>
-                <span class="pass-photo-tag">OPERATOR // CAF-2006</span>
+              <div id="access-pass" class="access-pass">
+                <div class="pass-glare"></div>
+
+                <div class="pass-head">
+                  <div class="pass-org">
+                    <span class="pass-org-title">DESIGN LAB PASS</span>
+                    <span class="pass-org-sub">OFFICE &amp; BUSINESS OPS</span>
+                  </div>
+                  <div class="pass-stamp">VERIFIED</div>
+                </div>
+
+                <div class="pass-photo-frame">
+                  <img src="assets/images/chandra-profile.jpg" alt="Chandra Arya Ferdiyansah Profile" />
+                  <div class="pass-photo-overlay"></div>
+                  <span class="pass-photo-tag">OPERATOR // CAF-2006</span>
+                </div>
+
+                <div class="pass-details">
+                  <div class="pass-field">
+                    <span class="pass-label">NAME</span>
+                    <span class="pass-value">CHANDRA ARYA F.</span>
+                  </div>
+                  <div class="pass-field">
+                    <span class="pass-label">DISCIPLINE</span>
+                    <span class="pass-value">BUSINESS MGMT</span>
+                  </div>
+                  <div class="pass-field">
+                    <span class="pass-label">GRADUATION</span>
+                    <span class="pass-value">CLASS OF 2025</span>
+                  </div>
+                  <div class="pass-field">
+                    <span class="pass-label">AVERAGE SCORE</span>
+                    <span class="pass-value accent">88.02 (COMPETENT)</span>
+                  </div>
+                </div>
+
+                <div class="pass-barcode-area">
+                  <div class="pass-barcode">
+                    <span class="w-1"></span>
+                    <span class="w-2"></span>
+                    <span class="space"></span>
+                    <span class="w-3"></span>
+                    <span class="w-1"></span>
+                    <span class="space"></span>
+                    <span class="w-2"></span>
+                    <span class="w-1"></span>
+                    <span class="w-3"></span>
+                    <span class="space"></span>
+                    <span class="w-2"></span>
+                    <span class="w-1"></span>
+                  </div>
+                  <span class="pass-code">#CAF-8802-2025</span>
+                </div>
               </div>
 
-              <div class="pass-details">
-                <div class="pass-field">
-                  <span class="pass-label">NAME</span>
-                  <span class="pass-value">CHANDRA ARYA F.</span>
-                </div>
-                <div class="pass-field">
-                  <span class="pass-label">DISCIPLINE</span>
-                  <span class="pass-value">BUSINESS MGMT</span>
-                </div>
-                <div class="pass-field">
-                  <span class="pass-label">GRADUATION</span>
-                  <span class="pass-value">CLASS OF 2025</span>
-                </div>
-                <div class="pass-field">
-                  <span class="pass-label">AVERAGE SCORE</span>
-                  <span class="pass-value accent">88.02 (COMPETENT)</span>
-                </div>
-              </div>
-
-              <div class="pass-barcode-area">
-                <div class="pass-barcode">
-                  <span class="w-1"></span>
-                  <span class="w-2"></span>
-                  <span class="space"></span>
-                  <span class="w-3"></span>
-                  <span class="w-1"></span>
-                  <span class="space"></span>
-                  <span class="w-2"></span>
-                  <span class="w-1"></span>
-                  <span class="w-3"></span>
-                  <span class="space"></span>
-                  <span class="w-2"></span>
-                  <span class="w-1"></span>
-                </div>
-                <span class="pass-code">#CAF-8802-2025</span>
-              </div>
+              <span class="pass-hint-tag">[ HOVER / MOVE CURSOR TO TILT 3D PASS ]</span>
             </div>
           </div>
 
@@ -239,7 +272,7 @@
               <span class="plate__period">25 JUL – 01 DES 2025</span>
             </div>
 
-            <h3 class="plate__title">Crew Outlet &amp; Kasir Utama</h3>
+            <h3 class="plate__title" data-decrypt="Crew Outlet &amp; Kasir Utama">Crew Outlet &amp; Kasir Utama</h3>
             <p class="plate__desc">
               Menjalankan operasional gerai retail F&amp;B dengan sistem kerja adaptif dan disiplin tinggi, memegang kendali ganda pada bagian front-end kasir serta eksekusi pesanan.
             </p>
@@ -270,7 +303,7 @@
               <span class="plate__period">01 FEB – 01 JUN 2024</span>
             </div>
 
-            <h3 class="plate__title">Crew Outlet &amp; Produksi F&amp;B</h3>
+            <h3 class="plate__title" data-decrypt="Crew Outlet &amp; Produksi F&amp;B">Crew Outlet &amp; Produksi F&amp;B</h3>
             <p class="plate__desc">
               Fokus pada pelayanan konsumen cepat saji, konsistensi racikan produk, dan akurasi perputaran stok barang fisik di outlet.
             </p>
@@ -300,7 +333,7 @@
               <span class="plate__period">02 OKT – 29 DES 2023</span>
             </div>
 
-            <h3 class="plate__title">Pelayanan Kesejahteraan Sosial</h3>
+            <h3 class="plate__title" data-decrypt="Pelayanan Kesejahteraan Sosial">Pelayanan Kesejahteraan Sosial</h3>
             <p class="plate__desc">
               Bertugas di unit garis depan (front office) kantor kelurahan untuk melayani administrasi kependudukan dan kebutuhan sosial masyarakat.
             </p>
@@ -329,7 +362,7 @@
               <span class="plate__period">02 OKT – 29 DES 2023</span>
             </div>
 
-            <h3 class="plate__title">Magang Administrasi &amp; Tata Kelola Kearsipan</h3>
+            <h3 class="plate__title" data-decrypt="Magang Administrasi &amp; Kearsipan">Magang Administrasi &amp; Tata Kelola Kearsipan</h3>
             <p class="plate__desc">
               Praktik kerja lapangan kejuruan manajemen perkantoran dalam penataan sistematis berkas dan persuratan resmi pemerintahan.
             </p>
@@ -581,7 +614,13 @@
     </div>
   </div>
 
-  <!-- Scripts -->
+  <!-- CDN: Studio Freight Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  <!-- CDN: GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Main Interactive Script -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>
